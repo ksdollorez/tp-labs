@@ -1,9 +1,9 @@
 
 class Hero:
-    def __init__(self):
-        self.name = ""
-        self.hero_class = ""
-        self.weapon = ""
+    def __init__(self, name, hero_class, weapon):
+        self.name = name
+        self.hero_class = hero_class
+        self.weapon = weapon
 
     def show(self):
         print("Имя:", self.name)
@@ -13,30 +13,42 @@ class Hero:
 
 class HeroBuilder:
     def __init__(self):
-        self.hero = Hero()
+        self.name = ""
+        self.hero_class = ""
+        self.weapon = ""
 
     def set_name(self, name):
-        self.hero.name = name
+        self.name = name
         return self
 
     def set_class(self, hero_class):
-        self.hero.hero_class = hero_class
+        self.hero_class = hero_class
         return self
 
     def set_weapon(self, weapon):
-        self.hero.weapon = weapon
+        self.weapon = weapon
         return self
 
     def build(self):
-        return self.hero
+        return Hero(self.name, self.hero_class, self.weapon)
 
 
 builder = HeroBuilder()
 
-hero = (builder
-        .set_name("Артур")
-        .set_class("Воин")
-        .set_weapon("Меч")
-        .build())
+hero1 = (builder
+         .set_name("Артур")
+         .set_class("Воин")
+         .set_weapon("Меч")
+         .build())
 
-hero.show()
+hero2 = (builder
+         .set_name("Мерлин")
+         .set_class("Маг")
+         .set_weapon("Посох")
+         .build())
+
+print("Первый герой:")
+hero1.show()
+
+print("\nВторой герой:")
+hero2.show()
