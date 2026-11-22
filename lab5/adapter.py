@@ -20,7 +20,6 @@ class MagicBook:
 def use_item(item):
     item.use()
 
-
 book = MagicBook()
 old_artifact = OldArtifact()
 artifact = ArtifactAdapter(old_artifact)

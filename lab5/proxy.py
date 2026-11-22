@@ -15,7 +15,6 @@ class TreasureProxy:
         else:
             print("Дверь закрыта. Нужен ключ.")
 
-
 chest = TreasureProxy(False)
 chest.open()
 

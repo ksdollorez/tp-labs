@@ -28,7 +28,6 @@ class Mage(Hero):
         print("Маг", end=" ")
         self.weapon.use()
 
-
 warrior = Warrior(Sword())
 mage = Mage(Staff())
 
